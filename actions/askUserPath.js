@@ -9,7 +9,7 @@ const askUserPath = async () => {
             message: 'Write your path: ',
         }]);
 
-        return result[userInput];
+        return result[userInput].toString();
 }
 
 module.exports = askUserPath;

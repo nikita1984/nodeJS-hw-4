@@ -1,26 +1,17 @@
 const askUserPath = require('./actions/askUserPath');
+const getUserPath = require('./actions/getUserPath');
+const getContentFromUserPath = require ('./actions/getContentFromUserPath');
 
 
 (async () => {
-    const userInput = await askUserPath();
+    const userString = await askUserPath();
 
-    console.log('userInput:', userInput); 
-    /*
-    getContentFromUserInput (userPath);
-    */
+    // console.log('userString:', userString); 
+
+    const userPath = await getUserPath(userString);
+
+    // console.log('userPath:', userPath); 
+    
+    await getContentFromUserPath(userPath);
+    
 })();
-
-
-
-/*
-
-function getContentFromUserInput (userPath) {
-    if (isFile(userInput)){
-        await showFileContents(path.join(CWD, userPath));
-    } else {
-        const filesInDirectory = await getFileNamesInDirectory(userPath);
-        const userInput = await promptUser(filesInDirectory);
-        getContentFromUserInput(userInput);
-    }
-}
-*/
