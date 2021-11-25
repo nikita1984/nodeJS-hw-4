@@ -2,9 +2,9 @@ const askUserPath = require('./actions/askUserPath');
 
 
 (async () => {
-    askUserPath();
+    const userInput = await askUserPath();
 
-    // console.log(userPath); 
+    console.log('userInput:', userInput); 
     /*
     getContentFromUserInput (userPath);
     */

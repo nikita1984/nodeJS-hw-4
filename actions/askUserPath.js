@@ -1,20 +1,15 @@
-const readline = require('readline');
+const inquirer = require('inquirer');
 
+const askUserPath = async () => {
+        const userInput = 'userInput';
 
-function askUserPath() {
-    const rl = readline.createInterface({
-        input: process.stdin,
-        output: process.stdout
-    });
-    
-    rl.question("Write your path: ", (data) => {
-        console.log("Data:", data);
-        rl.close();
-    });
+        const result = await inquirer.prompt([{
+            name: userInput,
+            type: 'input',
+            message: 'Write your path: ',
+        }]);
 
-    rl.on('close', () => {
-        process.exit(0);
-    });
+        return result[userInput];
 }
 
 module.exports = askUserPath;
