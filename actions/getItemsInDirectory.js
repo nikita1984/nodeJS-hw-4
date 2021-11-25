@@ -14,15 +14,7 @@ const fs = require('fs');
         });
     });
 
-    console.log(itemsInDirectory);
-
-    /*
-    // отфильтровываем (отбираем)  с помощью метода isFile() из полученного содержимого директории 
-    // только файлы, а затем возвращаем их
-    return itemsInDirectory.filter((data) => {
-        return isFile(path.join(directory, data));
-    })
-    */
+    return itemsInDirectory;
 }
 
 module.exports= getItemsInDirectory;
