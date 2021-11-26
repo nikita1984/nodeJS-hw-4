@@ -19,11 +19,9 @@ const getContentFromUserPath = async (filepath) => {
         await showFileContents(filepath);
     } else if (isDirectory(filepath)) {
         const itemsInDirectory = await getItemsInDirectory(filepath);
-        const userChoice = await promptUser(itemsInDirectory);
-        console.log('userChoice: ', userChoice);
+        const userChoice = await promptUser(itemsInDirectory, filepath);
         await getContentFromUserPath(userChoice);
     } else {
-        console.log("error");
         console.error("write path to file or directory?");
         process.exit(1);
     }  
