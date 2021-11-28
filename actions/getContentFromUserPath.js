@@ -15,7 +15,11 @@ const isFile = function (filepath) {
 const isDirectory = function (filepath) {
     return fs.lstatSync(filepath).isDirectory();
 }
-
+/**
+ * Выводит содержимое файла, при наличии RegEx соответсвующее RegEx, 
+ * или перечень содержимого директории для выбора пользователю
+ * @param {string} filepath - путь к файлу или директории
+ */
 const getContentFromUserPath = async (filepath) => {
     if (isFile(filepath)){
         const userRegExp = await askRegularExpression();

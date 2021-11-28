@@ -1,5 +1,9 @@
 const inquirer = require('inquirer');
 
+/**
+ * Запрашиваем у пользователя в консоли информацию для дальнейшей обработки
+ * @returns {string} строку с информацией полученной от пользователя
+ */
 const askUserPath = async () => {
         const userInput = 'userInput';
 

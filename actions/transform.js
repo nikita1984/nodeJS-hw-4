@@ -1,6 +1,10 @@
-const { Transform } = require('stream');
+const { Transform, Stream } = require('stream');
 const {EOL} = require('os');
-
+/**
+ * Преобразует входной поток в соответсвии с условиями входящего регулярного выражения
+ * @param {RegEx} regex - регулярное выражение полученное от пользователя
+ * @returns {Stream} отфильтрованный поток в соответствии с требованиями регулярного выражения
+ */
 const transform = function (regex) {
     const transformStream = new Transform({
         transform(chunk, encoding, callback) {
